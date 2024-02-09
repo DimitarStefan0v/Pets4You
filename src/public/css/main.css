@@ -13,6 +13,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
+    position: relative;
 }
 
 body,
@@ -102,19 +103,19 @@ a {
     transition: all 0.2s ease-in-out;
 }
 
-#menu-icon.close .bar {
+#menu-icon.visible .bar {
     background-color: red;
 }
 
-#menu-icon.close .bar:first-child {
+#menu-icon.visible .bar:first-child {
     transform: translateY(10px) rotate(45deg);
 }
 
-#menu-icon.close .bar:nth-child(2) {
+#menu-icon.visible .bar:nth-child(2) {
     opacity: 0;
 }
 
-#menu-icon.close .bar:last-child {
+#menu-icon.visible .bar:last-child {
     transform: translateY(-10px) rotate(-45deg);
 }
 
@@ -135,6 +136,15 @@ a {
 
 .link.home-img img {
     width: 40px;
+}
+
+#backdrop {
+    display: none;
+    position: absolute;
+    background-color: rgba(0,0,0,0.2);
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
 }
 
 
