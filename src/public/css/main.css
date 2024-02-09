@@ -152,3 +152,8 @@ a {
     
 }
 
+@media (width <= 1170px) {
+    .desktop-links-wrapper {
+        /* padding: 1rem; */
+    }
+}
