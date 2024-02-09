@@ -98,6 +98,7 @@ a {
     margin: 5px;
     border-radius: 4px;
     background-color: #000;
+    transition: all 0.2s ease-in-out;
 }
 
 #menu-icon.close .bar {
@@ -116,7 +117,8 @@ a {
     transform: translateY(-10px) rotate(-45deg);
 }
 
-.mobile-links-wrapper links {
+
+.mobile-links-wrapper .links {
 
 }
 
