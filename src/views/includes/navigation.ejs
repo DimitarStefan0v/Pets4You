@@ -9,13 +9,13 @@
         </ul>
         <ul class="links">
             <li class="link">
-                <a href="/pets/create">Добави обява</a>
+                <a href="/pets/create" class="<%= path === '/create' ? 'active' : '' %>">Добави обява</a>
             </li>
 			<li class="link auth">
-				<a href="/auth/login">Вход</a>
+				<a href="/auth/login" class="<%= path === '/login' ? 'active' : '' %>">Вход</a>
 			</li>
 			<li class="link auth">
-				<a href="/auth/register">Регистрация</a>
+				<a href="/auth/register" class="<%= path === '/register' ? 'active' : '' %>">Регистрация</a>
 			</li>
 			<li class="link auth">
 				<a href="/auth/logout">Излез</a>
