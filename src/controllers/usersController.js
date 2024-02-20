@@ -1,6 +1,7 @@
 const express = require('express');
 
 const usersService = require('../services/usersService');
+const { extractErrorMessages } = require('../utils/errorHelpers');
 
 const router = express.Router();
 
@@ -15,7 +16,8 @@ router.post('/register', async (req, res) => {
 		await usersService.isEmailAvailable(email);
 		await usersService.register(name, email, password, repeatPassword);
 	} catch (error) {
-		console.log(error);
+		const errors = extractErrorMessages(error);
+        console.log(errors);
 	}
 
 	res.redirect('/');
