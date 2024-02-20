@@ -6,7 +6,7 @@ const { extractErrorMessages } = require('../utils/errorHelpers');
 const router = express.Router();
 
 router.get('/register', (req, res) => {
-	res.render('users/register', { pageTitle: 'Register' });
+	res.render('users/register', { pageTitle: 'Register', path: '/register' });
 });
 
 router.post('/register', async (req, res) => {
@@ -18,6 +18,7 @@ router.post('/register', async (req, res) => {
 	} catch (error) {
 		const errors = extractErrorMessages(error);
         console.log(errors);
+        return res.render('users/register', { pageTitle: 'Register', path: '/register' });
 	}
 
 	res.redirect('/');
