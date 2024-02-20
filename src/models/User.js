@@ -23,6 +23,12 @@ const userSchema = new mongoose.Schema({
 	},
 });
 
+userSchema.virtual('repeatPassword').set(function(value) {
+    if (value !== this.password) {
+        throw new mongoose.MongooseError(VALIDATION_MESSAGES.PASSWORDS_MISSMATCH);
+    }
+});
+
 const User = mongoose.model('User', userSchema);
 
 module.exports = User;
