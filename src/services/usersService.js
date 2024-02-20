@@ -1,13 +1,14 @@
 const User = require('../models/User');
 const { VALIDATION_MESSAGES } = require('../utils/messages');
 
-const isEmailAvailable = async (email) => {
+exports.isEmailAvailable = async (email) => {
 	const user = await User.find({ email: email }).lean();
 
 	if (user) {
-		return false;
+		throw Error(VALIDATION_MESSAGES.EMAIL_TAKEN);
 	}
+};
 
-	return true;
+
 };
 
