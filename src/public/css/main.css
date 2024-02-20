@@ -61,7 +61,7 @@ a {
 }
 
 .footer-links a:hover {
-    color: aqua;
+    color: #40D2C1;
 }
 
 .main {
@@ -175,4 +175,7 @@ a {
         gap: 1rem;
     }
     
+    .desktop-links-wrapper .links .active {
+        color: #40D2C1;
+    }
 }
