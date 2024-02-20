@@ -20,6 +20,7 @@ const userSchema = new mongoose.Schema({
 	email: {
 		type: String,
 		trim: true,
+        unique: true,
 		required: [true, VALIDATION_MESSAGES.REQUIRED('Имейла')],
 	},
 });

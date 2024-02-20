@@ -9,12 +9,5 @@ exports.isEmailAvailable = async (email) => {
 	}
 };
 
-exports.register = (name, email, password, repeatPassword) => {
-    
-    // TODO: check if password === repeatPassword
-
-    //TODO: hash the password before save it in db
-
-    return User.create({name, email, password});
-};
-
+exports.register = (name, email, password, repeatPassword) =>
+	User.create({ name, email, password, repeatPassword });
