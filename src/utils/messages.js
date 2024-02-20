@@ -3,4 +3,5 @@ exports.VALIDATION_MESSAGES = {
     MIN_LENGTH: (field, length) => `${field} не може да е по-малко от ${length} символа`,
     MAX_LENGTH: (field, length) => `${field} не може да е по-дълго от ${length} символа`,
     EMAIL_TAKEN: 'Имейлът е вече регистриран от друг потребител',
+    PASSWORDS_MISSMATCH: 'Полетата за парола и повтори парола не съвпадат'
 };
