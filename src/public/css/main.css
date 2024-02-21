@@ -153,6 +153,26 @@ a {
     z-index: 2;
 }
 
+.not-found-wrapper {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.not-found-wrapper img {
+    width: 100%;
+    height: 100%;
+}
+
+.not-found-wrapper h1 {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 1.5rem;
+}
+
 
 @media (width >= 500px) {
     .mobile-links-wrapper {
@@ -177,5 +197,12 @@ a {
     
     .desktop-links-wrapper .links .active {
         color: #40D2C1;
+    }
+}
+
+@media (width >= 600px) {
+    .not-found-wrapper h1 {
+        top: 15%;
+        font-size: 3rem;
     }
 }
