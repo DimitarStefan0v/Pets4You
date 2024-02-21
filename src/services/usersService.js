@@ -9,5 +9,5 @@ exports.isEmailAvailable = async (email) => {
 	}
 };
 
-exports.register = (name, email, password, repeatPassword) =>
+exports.register = ({ name, email, password, repeatPassword }) =>
 	User.create({ name, email, password, repeatPassword });

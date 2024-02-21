@@ -12,19 +12,19 @@
                     <p class="center">Регистрирай акаунт безплатно</p>
                     <div class="form-control">
                         <label for="name">Твоето име</label>
-                        <input type="text" id="name" name="name">
+                        <input type="text" id="name" name="name" value="<%= userData.name %>">
                     </div>
                     <div class="form-control">
                         <label for="email">Имейл</label>
-                        <input type="text" id="email" name="email">
+                        <input type="text" id="email" name="email" value="<%= userData.email%>">
                     </div>
                     <div class="form-control">
                         <label for="password">Парола</label>
-                        <input type="password" id="password" name="password">
+                        <input type="password" id="password" name="password" value="<%= userData.password %>">
                     </div>
                     <div class="form-control">
                         <label for="repeatPassword">Повтори парола</label>
-                        <input type="password" id="repeatPassword" name="repeatPassword">
+                        <input type="password" id="repeatPassword" name="repeatPassword" value="<%= userData.repeatPassword %>">
                     </div>
                     <div class="form-control">
                         <input class="btn" type="submit" value="СЪЗДАЙ АКАУНТ">
