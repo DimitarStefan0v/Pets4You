@@ -6,18 +6,33 @@ const { extractErrorMessages } = require('../utils/errorHelpers');
 const router = express.Router();
 
 router.get('/register', (req, res) => {
-	res.render('users/register', { pageTitle: 'Register', path: '/register', messages: undefined });
+	res.render('users/register', {
+		pageTitle: 'Register',
+		path: '/register',
+		messages: undefined,
+		userData: {},
+	});
 });
 
 router.post('/register', async (req, res) => {
-	const { name, email, password, repeatPassword } = req.body;
+	const userData = {
+		name: req.body.name,
+		email: req.body.email,
+		password: req.body.password,
+		repeatPassword: req.body.repeatPassword,
+	};
 
 	try {
-		await usersService.isEmailAvailable(email);
-		await usersService.register(name, email, password, repeatPassword);
+		await usersService.isEmailAvailable(userData.email);
+		await usersService.register(userData);
 	} catch (error) {
 		const errors = extractErrorMessages(error);
-        return res.render('users/register', { pageTitle: 'Register', path: '/register', messages: errors });
+		return res.render('users/register', {
+			pageTitle: 'Register',
+			path: '/register',
+			messages: errors,
+			userData,
+		});
 	}
 
 	res.redirect('/');
