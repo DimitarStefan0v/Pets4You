@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
 		required: [true, VALIDATION_MESSAGES.REQUIRED('име')],
 		minLength: [3, VALIDATION_MESSAGES.MIN_LENGTH('Името', 3)],
 		maxLength: [30, VALIDATION_MESSAGES.MAX_LENGTH('Името', 30)],
-        match: [/^[A-Za-zА-Яа-я]+$/, VALIDATION_MESSAGES.NAME_REGEX]
+        match: [/^[A-Za-zА-Яа-я]+$/, VALIDATION_MESSAGES.INVALID_NAME]
 	},
 	password: {
 		type: String,
@@ -23,6 +23,7 @@ const userSchema = new mongoose.Schema({
 		trim: true,
         unique: true,
 		required: [true, VALIDATION_MESSAGES.REQUIRED('имейл')],
+        match: [/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/, VALIDATION_MESSAGES.INVALID_EMAIL]
 	},
 });
 
