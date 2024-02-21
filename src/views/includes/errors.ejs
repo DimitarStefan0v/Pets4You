@@ -1,0 +1,7 @@
+<div class="errors-wrapper">
+    <% if (messages) { %>
+        <% for (let errorMsg of messages) { %>
+        <div class="error center"><%= errorMsg %></div>
+        <% } %>
+    <% } %>
+</div>
