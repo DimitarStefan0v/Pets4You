@@ -35,7 +35,16 @@ router.post('/register', async (req, res) => {
 		});
 	}
 
-	res.redirect('/');
+	res.redirect('/login');
+});
+
+router.get('/login', (req, res) => {
+	res.render('users/login', {
+		pageTitle: 'Login',
+		path: '/login',
+		messages: undefined,
+		userData: {},
+	});
 });
 
 module.exports = router;
