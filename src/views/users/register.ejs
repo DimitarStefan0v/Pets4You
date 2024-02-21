@@ -6,13 +6,8 @@
         <%- include('../includes/navigation.ejs') %>
 
             <main class="main">
-                <div class="errors">
-                    <% if (messages) { %>
-                        <% for (let errorMsg of messages) { %>
-                        <div><%= errorMsg %></div>
-                        <% } %>
-                    <% } %>
-                </div>
+                <%- include('../includes/errors.ejs') %>
+
                 <form method="POST" class="form">
                     <p class="center">Регистрирай акаунт безплатно</p>
                     <div class="form-control">
