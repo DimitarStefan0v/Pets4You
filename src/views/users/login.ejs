@@ -9,11 +9,7 @@
                 <%- include('../includes/errors.ejs') %>
 
                 <form method="POST" class="form">
-                    <p class="center heading">Регистрирай акаунт безплатно</p>
-                    <div class="form-control">
-                        <label for="name">Твоето име</label>
-                        <input type="text" id="name" name="name" value="<%= userData.name %>">
-                    </div>
+                    <p class="center heading">Вход</p>
                     <div class="form-control">
                         <label for="email">Имейл</label>
                         <input type="email" id="email" name="email" value="<%= userData.email%>">
@@ -23,11 +19,7 @@
                         <input type="password" id="password" name="password" value="<%= userData.password %>">
                     </div>
                     <div class="form-control">
-                        <label for="repeatPassword">Повтори парола</label>
-                        <input type="password" id="repeatPassword" name="repeatPassword" value="<%= userData.repeatPassword %>">
-                    </div>
-                    <div class="form-control">
-                        <input class="btn" type="submit" value="СЪЗДАЙ АКАУНТ">
+                        <input class="btn" type="submit" value="Вход">
                     </div>
                 </form>
             </main>
