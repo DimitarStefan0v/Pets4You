@@ -47,4 +47,22 @@ router.get('/login', (req, res) => {
 	});
 });
 
+router.post('/login', async (req, res) => {
+	const { email, password } = req.body;
+
+	try {
+		await usersService.login(email, password);
+	} catch (error) {
+        const errors = extractErrorMessages(error);
+		return res.render('users/login', {
+			pageTitle: 'Login',
+			path: '/login',
+			messages: errors,
+			userData: { email, password },
+		});
+	}
+
+    res.redirect('/');
+});
+
 module.exports = router;
