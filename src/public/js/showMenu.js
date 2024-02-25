@@ -6,10 +6,10 @@ menuBtn.addEventListener('click', () => {
     menuBtn.classList.toggle('visible');
 
     if (menuBtn.classList.contains('visible')) {
-        links.style.display = 'flex';
+        links.style.left = 0;
         backdrop.style.display = 'block'
     } else {
-        links.style.display = 'none';
+        links.style.left = '-100%';
         backdrop.style.display = 'none';
     }
 });
@@ -18,7 +18,7 @@ backdrop.addEventListener('click', () => {
     backdrop.style.display = 'none';
 
     if (menuBtn.classList.contains('visible')) {
-        links.style.display = 'none';
+        links.style.left = '-100%';
         menuBtn.classList.remove('visible');
     } 
 });
