@@ -131,6 +131,7 @@ a {
     left: -100%;
     z-index: 3;
     
+    transition: all 0.3s ease-in-out;
 
     width: 100%;
     background-color: white;
