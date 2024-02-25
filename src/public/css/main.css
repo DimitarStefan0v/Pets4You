@@ -138,6 +138,11 @@ a {
     flex-direction: column;
     gap: 1rem;
     z-index: 3;
+
+#menu-links .active {
+    border: 1px solid #40D2C1;
+    border-radius: 5px;
+    color: #40D2C1;
 }
 
 .link.home-img img {
@@ -174,6 +179,8 @@ a {
 }
 
 
+
+
 @media (width >= 500px) {
     .mobile-links-wrapper {
         display: none;
@@ -197,6 +204,7 @@ a {
     
     .desktop-links-wrapper .links .active {
         color: #40D2C1;
+        border-bottom: 2px solid #40D2C1;
     }
 }
 
