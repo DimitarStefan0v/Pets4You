@@ -52,7 +52,7 @@ router.post('/login', async (req, res) => {
 
 	try {
 		const token = await usersService.login(email, password);
-        
+
         res.cookie('auth', token, { httpOnly: true });
 	} catch (error) {
         const errors = extractErrorMessages(error);
@@ -65,6 +65,11 @@ router.post('/login', async (req, res) => {
 		});
 	}
 
+    res.redirect('/');
+});
+
+router.get('/logout', (req, res) => {
+    res.clearCookie('auth');
     res.redirect('/');
 });
 
