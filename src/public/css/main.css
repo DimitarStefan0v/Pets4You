@@ -139,6 +139,16 @@ a {
     gap: 1rem;
     z-index: 3;
 
+#menu-links .link {
+    width: 50%;
+    text-align: center;
+}
+
+#menu-links a {
+    width: 100%;
+    display: inline-block;
+}
+
 #menu-links .active {
     border: 1px solid #40D2C1;
     border-radius: 5px;
