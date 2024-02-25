@@ -2,6 +2,7 @@ const bcrypt = require('bcrypt');
 
 const User = require('../models/User');
 const { VALIDATION_MESSAGES } = require('../utils/messages');
+const jwtPromises = require('../utils/jwtPromises');
 
 exports.register = ({ name, email, password, repeatPassword }) =>
 	User.create({ name, email, password, repeatPassword });
@@ -19,7 +20,14 @@ exports.login = async (email, password) => {
         throw Error(VALIDATION_MESSAGES.INVALID_LOGIN);
     }
 
-    // TODO: create token with jwt and return it
+    const payload = { 
+        _id: user._id,
+        email: user.email,
+     };
+
+    const token = await jwtPromises.sign(payload, 'secret', { expiresIn: '1d' });
+    
+    return token;
 };
 
 exports.isEmailAvailable = async (email) => {
