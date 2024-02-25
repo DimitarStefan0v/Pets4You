@@ -51,9 +51,12 @@ router.post('/login', async (req, res) => {
 	const { email, password } = req.body;
 
 	try {
-		await usersService.login(email, password);
+		const token = await usersService.login(email, password);
+        
+        res.cookie('auth', token, { httpOnly: true });
 	} catch (error) {
         const errors = extractErrorMessages(error);
+
 		return res.render('users/login', {
 			pageTitle: 'Login',
 			path: '/login',
