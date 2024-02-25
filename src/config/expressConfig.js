@@ -3,6 +3,7 @@ const path = require('path');
 const express = require('express');
 const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
+const dotenv = require('dotenv').config();
 
 
 const expressConfig = (app) => {
