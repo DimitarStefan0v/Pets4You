@@ -6,8 +6,6 @@ const dbConnect = require('./config/dbConfig');
 
 const routes = require('./routes');
 
-const PORT = 5000;
-
 const app = express();
 
 expressConfig(app);
@@ -19,4 +17,4 @@ dbConnect()
 
 app.use(routes);
 
-app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
+app.listen(process.env.PORT || 5000, () => console.log(`Server is running on port ${process.env.PORT || 5000}`));
