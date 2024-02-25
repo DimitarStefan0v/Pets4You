@@ -126,18 +126,25 @@ a {
 }
 
 .mobile-links-wrapper #menu-links {
-    display: none;
-    margin-top: 4rem;
-    padding: 2rem 3rem 5rem 2rem;
     position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #efefef;
-    box-shadow: 10px 10px 13px 0px rgba(0, 0, 0, 0.815);
-    border-bottom-right-radius: 18px;
-    flex-direction: column;
-    gap: 1rem;
+    top: -1px;
+    left: -100%;
     z-index: 3;
+    
+
+    width: 100%;
+    background-color: white;
+    line-height: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+
+    margin-top: 4rem;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
 
 #menu-links .link {
     width: 50%;
