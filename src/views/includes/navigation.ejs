@@ -11,6 +11,9 @@
             <li class="link">
                 <a href="/pets/create" class="<%= path === '/create' ? 'active' : '' %>">Добави обява</a>
             </li>
+            <li class="link">
+                <a href="/pets/search" class="<%= path === '/search' ? 'active' : '' %>">Търси</a>
+            </li>
             <% if (_locals.isAuthenticated) { %>
                 <li class="link auth">
                     <a href="/auth/logout">Излез</a>
@@ -38,6 +41,9 @@
             </li>
             <li class="link">
                 <a href="/pets/create" class="<%= path === '/create' ? 'active' : '' %>">Добави обява</a>
+            </li>
+            <li class="link">
+                <a href="/pets/search" class="<%= path === '/search' ? 'active' : '' %>">Търси</a>
             </li>
             
             <% if (_locals.isAuthenticated) { %>
