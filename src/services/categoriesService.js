@@ -17,4 +17,31 @@ exports.seedInitialCategories = async () => {
 					throw Error(err);
 				}
 
+				categoriesObj = JSON.parse(data);
+				for (const key in categoriesObj) {
+					Category.create({ animalType: key })
+						.then((categoryResult) => {
+							for (const breedName of categoriesObj[key]) {
+								Breed.create({ name: breedName, category: categoryResult._id })
+									.then((breedResult) => {
+										Category.findByIdAndUpdate(categoryResult._id, {
+											$push: { breeds: breedResult._id },
+										}).then((res) => res);
+									})
+									.catch((error) => {
+										throw Error(error);
+									});
+							}
+						})
+						.catch((error) => {
+							throw Error(error);
+						});
+				}
+			}
+		);
+
+        return 'Categories seeded successfully';
+	}
+
+    return 'Found categories. Seeding not initiated.'
 };
