@@ -1,9 +1,7 @@
-const express = require('express');
+const router = require('express').Router();
 
 const usersService = require('../services/usersService');
 const { extractErrorMessages } = require('../utils/errorHelpers');
-
-const router = express.Router();
 
 router.get('/register', (req, res) => {
 	res.render('users/register', {
@@ -53,9 +51,9 @@ router.post('/login', async (req, res) => {
 	try {
 		const token = await usersService.login(email, password);
 
-        res.cookie('auth', token, { httpOnly: true });
+		res.cookie('auth', token, { httpOnly: true });
 	} catch (error) {
-        const errors = extractErrorMessages(error);
+		const errors = extractErrorMessages(error);
 
 		return res.render('users/login', {
 			pageTitle: 'Login',
@@ -65,12 +63,12 @@ router.post('/login', async (req, res) => {
 		});
 	}
 
-    res.redirect('/');
+	res.redirect('/');
 });
 
 router.get('/logout', (req, res) => {
-    res.clearCookie('auth');
-    res.redirect('/');
+	res.clearCookie('auth');
+	res.redirect('/');
 });
 
 module.exports = router;
