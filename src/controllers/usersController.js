@@ -5,7 +5,7 @@ const { extractErrorMessages } = require('../utils/errorHelpers');
 
 router.get('/register', (req, res) => {
 	res.render('users/register', {
-		pageTitle: 'Register',
+		pageTitle: 'Регистрация',
 		path: '/register',
 		messages: undefined,
 		userData: {},
@@ -26,7 +26,7 @@ router.post('/register', async (req, res) => {
 	} catch (error) {
 		const errors = extractErrorMessages(error);
 		return res.render('users/register', {
-			pageTitle: 'Register',
+			pageTitle: 'Регистрация',
 			path: '/register',
 			messages: errors,
 			userData,
@@ -38,7 +38,7 @@ router.post('/register', async (req, res) => {
 
 router.get('/login', (req, res) => {
 	res.render('users/login', {
-		pageTitle: 'Login',
+		pageTitle: 'Вход',
 		path: '/login',
 		messages: undefined,
 		userData: {},
@@ -56,7 +56,7 @@ router.post('/login', async (req, res) => {
 		const errors = extractErrorMessages(error);
 
 		return res.render('users/login', {
-			pageTitle: 'Login',
+			pageTitle: 'Вход',
 			path: '/login',
 			messages: errors,
 			userData: { email, password },
