@@ -4,14 +4,22 @@ const bcrypt = require('bcrypt');
 const { VALIDATION_MESSAGES } = require('../utils/messages');
 
 const userSchema = new mongoose.Schema({
-	name: {
+	firstName: {
 		type: String,
 		trim: true,
-		required: [true, VALIDATION_MESSAGES.REQUIRED('име')],
-		minLength: [3, VALIDATION_MESSAGES.MIN_LENGTH('Името', 3)],
-		maxLength: [30, VALIDATION_MESSAGES.MAX_LENGTH('Името', 30)],
-        match: [/^[A-Za-zА-Яа-я]+$/, VALIDATION_MESSAGES.INVALID_NAME]
+		required: [true, VALIDATION_MESSAGES.REQUIRED('собствено име')],
+		minLength: [3, VALIDATION_MESSAGES.MIN_LENGTH('Собственото ви име', 3)],
+		maxLength: [15, VALIDATION_MESSAGES.MAX_LENGTH('Собственото ви име', 15)],
+        match: [/^[A-Za-zА-Яа-я]+$/, VALIDATION_MESSAGES.INVALID_NAME('собствено име')]
 	},
+    lastName: {
+        type: String,
+        trim: true,
+        required: [true, VALIDATION_MESSAGES.REQUIRED('фамилно име')],
+        minLength: [3, VALIDATION_MESSAGES.MIN_LENGTH('Фамилното ви име', 3)],
+        maxLength: [15, VALIDATION_MESSAGES.MAX_LENGTH('Фамилното ви име', 15)],
+        match: [/^[A-Za-zА-Яа-я]+$/, VALIDATION_MESSAGES.INVALID_NAME('фамилно име')]
+    },
 	password: {
 		type: String,
 		trim: true,
