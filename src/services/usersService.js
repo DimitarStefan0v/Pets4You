@@ -4,8 +4,8 @@ const User = require('../models/User');
 const { VALIDATION_MESSAGES } = require('../utils/messages');
 const jwtPromises = require('../utils/jwtPromises');
 
-exports.register = ({ name, email, password, repeatPassword }) =>
-	User.create({ name, email, password, repeatPassword });
+exports.register = ({ firstName, lastName, email, password, repeatPassword }) =>
+	User.create({ firstName, lastName, email, password, repeatPassword });
 
 exports.login = async (email, password) => {
 	const user = await User.findOne({ email: email }).lean();
@@ -23,6 +23,8 @@ exports.login = async (email, password) => {
     const payload = { 
         _id: user._id,
         email: user.email,
+        firstName: user.firstName,
+        lastName: user.lastName,
      };
 
     const token = await jwtPromises.sign(payload, process.env.JWT_SECRET, { expiresIn: '1d' });
