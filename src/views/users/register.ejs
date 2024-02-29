@@ -11,8 +11,12 @@
                 <form method="POST" class="form">
                     <p class="center heading">Регистрирай акаунт безплатно</p>
                     <div class="form-control">
-                        <label for="name">Твоето име</label>
-                        <input type="text" id="name" name="name" value="<%= userData.name %>">
+                        <label for="firstName">Собствено име</label>
+                        <input type="text" id="firstName" name="firstName" value="<%= userData.firstName %>">
+                    </div>
+                    <div class="form-control">
+                        <label for="lastName">Фамилно име</label>
+                        <input type="text" id="lastName" name="lastName" value="<%= userData.lastName %>">
                     </div>
                     <div class="form-control">
                         <label for="email">Имейл</label>
