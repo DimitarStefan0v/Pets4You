@@ -14,7 +14,8 @@ router.get('/register', (req, res) => {
 
 router.post('/register', async (req, res) => {
 	const userData = {
-		name: req.body.name,
+		firstName: req.body.firstName,
+        lastName: req.body.lastName,
 		email: req.body.email,
 		password: req.body.password,
 		repeatPassword: req.body.repeatPassword,
@@ -33,7 +34,7 @@ router.post('/register', async (req, res) => {
 		});
 	}
 
-	res.redirect('/login');
+	res.redirect('/auth/login');
 });
 
 router.get('/login', (req, res) => {
